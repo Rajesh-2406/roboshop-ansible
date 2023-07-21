@@ -14,7 +14,7 @@
 
     - name: Update MongoDB Listen Address
       ansible.builtin.repalce:
-        path: /etc/mongodb.conf
+        path: /etc/mongod.conf
         regexp: '127.0.0.1'
         replace: '0.0.0.0'
 
