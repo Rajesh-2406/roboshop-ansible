@@ -32,5 +32,9 @@
     dest: /app
     remote_src: yes
 
-- name: Build the Software
-  ansible.builtin.yum:
+- name: Start {{ component }} Service
+  ansible.builtin.systemd:
+    name: "{{ component }}"
+    state: restarted
+    enabled: yes
+    daemon-reload: yes
