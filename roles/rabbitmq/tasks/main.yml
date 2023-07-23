@@ -20,7 +20,7 @@
     user: roboshop
     password: roboshop123
     vhost: /
-    configure priv: .*
-    read priv: .*
-    write priv: .*
+    configure_priv: .*
+    read_priv: .*
+    write_priv: .*
     state: present
