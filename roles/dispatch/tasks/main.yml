@@ -14,7 +14,7 @@
 
 - name: Download and Extract the App Content
   ansible.builtin.unarchive:
-    src:  curl -L -o /tmp/dispatch.zip https://roboshop-artifacts.s3.amazonaws.com/dispatch.zip
+    src:  curl -L -o /tmp/dispatch.zip https://roboshop-artifacts.s3.amazonaws.com/{{ component }}.zip
     dest: /app
     remote_src: yes
 
