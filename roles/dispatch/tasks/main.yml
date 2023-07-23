@@ -1,0 +1,36 @@
+
+    
+    echo -e "${color} Download the Application Dependencies ${nocolor}"
+    cd /app
+    go mod init dispatch  &>>log_file
+    
+    echo -e "${color} Build the Software ${nocolor}"
+    go get  &>>log_file
+    go build  &>>log_file
+    
+    echo -e "${color} Start the dispatch Service ${nocolor}"
+    systemctl daemon-reload  &>>log_file
+    systemctl enable dispatch  &>>log_file
+    systemctl start dispatch  &>>log_file
+- name: Install GoLang
+  ansible.builtin.yum:
+    name: golang
+    state: installed
+
+- name: Add Application User
+  ansible.builtin.user:
+    name: roboshop
+
+- name: Setup app directory
+  ansible.builtin.file:
+    path: /app
+    state: directory
+
+- name: Download and Extract the App Content
+  ansible.builtin.unarchive:
+    src:  curl -L -o /tmp/dispatch.zip https://roboshop-artifacts.s3.amazonaws.com/dispatch.zip
+    dest: /app
+    remote_src: yes
+
+- name: Build the Software
+  ansible.builtin.
