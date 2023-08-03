@@ -21,8 +21,8 @@
 
 - name: Copy roboshop configuration
   ansible.builtin.template:
-    src: templates
-    dest: /etc/nginx/default.d/templates
+    src: roboshop.conf
+    dest: /etc/nginx/default.d/roboshop.conf
 
 - name: Copy roboshop configuration
   ansible.builtin.systemd:
