@@ -19,7 +19,7 @@
     remote_src: yes
 
 - name: Download and build software
-  ansible.builtin.shell: npm install
+  ansible.builtin.shell: golang install
   args:
        chdir: /app
 
