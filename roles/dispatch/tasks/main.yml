@@ -19,7 +19,7 @@
     remote_src: yes
 
 - name: Download and build software
-  ansible.builtin.shell: GoLang install
+  ansible.builtin.shell: build GoLang
   args:
        chdir: /app
 
