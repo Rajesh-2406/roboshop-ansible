@@ -17,16 +17,3 @@
     src: https://roboshop-artifacts.s3.amazonaws.com/{{ component }}.zip
     dest: /app
     remote_src: yes
-
-- name: download the app dependencies
-  ansible.builtin.shell: go init
-  args:
-     chidr: /app
-
-- name: Start {{ component }} Service
-  ansible.builtin.systemd:
-    name: "{{ component }}"
-    state: restarted
-    enabled: yes
-    daemon-reload: yes
-
