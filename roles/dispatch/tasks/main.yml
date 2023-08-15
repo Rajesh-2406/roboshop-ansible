@@ -18,9 +18,3 @@
     dest: /app
     remote_src: yes
 
-- name: Start {{ component }} Service
-  ansible.builtin.systemd:
-    name: "{{ component }}"
-    state: restarted
-    enabled: yes
-    daemon-reload: yes
