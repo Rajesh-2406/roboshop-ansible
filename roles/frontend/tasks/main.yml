@@ -16,7 +16,7 @@
 - name: Download and extract frontend content
   ansible.builtin.unarchive:
     src: https://roboshop-artifacts.s3.amazonaws.com/frontend.zip
-    dest: /urs/share/nginx/html
+    dest: /usr/share/nginx/html
     remote_src: yes
 
 - name: Copy roboshop configuration
