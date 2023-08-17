@@ -1,5 +1,5 @@
 - name: Setup Roboshop project
-  hosts: local host
+  hosts: all
   become: yes
   serial: 1
   roles:
