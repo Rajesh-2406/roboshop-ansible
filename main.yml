@@ -3,4 +3,4 @@
   become: yes
   serial: 1
   roles:
-    - "{{ role_name }}"
+     - "{{ role_name }}"
