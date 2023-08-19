@@ -34,3 +34,8 @@
     state: restarted
     name: nginx
     enabled: true
+
+- name: Load filebeat
+  ansible.builtin.import_role:
+    name: elk
+    tasks_form: filebeat
