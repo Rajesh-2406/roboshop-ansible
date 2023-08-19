@@ -1,1 +1,2 @@
-component:
+component: frontend
+env: dev
