@@ -22,15 +22,4 @@ scrape_configs:
   # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
   - job_name: "prometheus"
     static_configs:
-      - targets: ["localhost:9090"]
-
-  - job_name: ec2
-    ec2_sd_configs:
-      - region: us-east-1
-        port: 9100
-        filters:
-          - name: "tag:monitor"
-            values: ["true" , "yes"]
-    relabel_configs:
-      - source_labels: [ __meta_ec2_tag_name ]
-        target_label: component
+      - targets: ["localhost:9090" , "54.210.251.226:9090" ]
