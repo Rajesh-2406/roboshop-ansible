@@ -40,7 +40,7 @@
     name: elk
     tasks_from: filebeat
 
-- name: Load Prometheus Node exporter
+- name: Load prometheus node exporter
   ansible.builtin.import_role:
     name: prometheus
-    tasks_form: node-exporter
+    tasks_from: mode-exporter
