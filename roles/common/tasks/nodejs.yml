@@ -20,11 +20,6 @@
     url: https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem
     dest : /app/rds-combined-ca-bundle.pem
 
-- name : Load schema
-  ansible.builtin.import_tasks:
-    file: mongo_schema_setup.yml
-    when: load_schema
-
 - name: Systemd Setup
   ansible.builtin.import_tasks:
     file: systemd_setup.yml
