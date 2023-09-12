@@ -4,4 +4,4 @@
     state: installed
 
 - name: load Schema
-  ansible.builtin.shell: mysql -h mongo --ssl --host {{ lookup('amazon.aws.aws_ssm', 'roboshop.{{env}}.mysql.endpoint', region='us-east-1') }}:27017 --sslCAFile /app/rds-combined-ca-bundle.pem --username {{ lookup('amazon.aws.aws_ssm', 'roboshop.{{env}}.mysql.username', region='us-east-1') }} --password  {{ lookup('amazon.aws.aws_ssm', 'roboshop.{{env}}.mysql.password', region='us-east-1') }}  </app/schema/{{ component }}.js
+  ansible.builtin.shell: mysql -h {{ lookup('amazon.aws.aws_ssm', 'roboshop.{{env}}.mysql.endpoint', region='us-east-1') }} -u{{ lookup('amazon.aws.aws_ssm', 'roboshop.{{env}}.mysql.username', region='us-east-1') }} -p{{ lookup('amazon.aws.aws_ssm', 'roboshop.{{env}}.mysql.password', region='us-east-1') }}  </app/schema/{{ component }}.js
