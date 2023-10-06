@@ -18,7 +18,7 @@ pipeline {
    stages{
            stage ('Get Servers'){
               steps {
-                sh 'aws ec2 describe-instances --filters "Name=tag:Name,Values=${component}-${env}" --query "Rservations[*].Instances[*].PrivateIpaddress" --output text >inv'
+                sh ' aws ec2 describe-instances --filters "Name=tag:Name,Values=user-dev" --query "Reservations[*].Instances[*].PrivateIpAddress" --output text >inv'
 
                }
            }
