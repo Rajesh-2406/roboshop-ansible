@@ -5,11 +5,11 @@ pipeline{
      }
   }
   parameters {
-        string(name: 'COMPONENT', defaultValue: '', description: 'Which Component')
-        string(name: 'ENV', defaultValue: '', description: 'Which Env')
-         string(name: 'APP_VERSION', defaultValue: '', description: 'Which Version')
+     string(name: 'COMPONENT', defaultValue: '', description: 'Which Component')
+     string(name: 'ENV', defaultValue: '', description: 'Which Env')
+     string(name: 'APP_VERSION', defaultValue: '', description: 'Which Version')
 
-         }
+     }
 
   stages {
       stage('Get Servers') {
