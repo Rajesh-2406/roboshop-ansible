@@ -10,13 +10,13 @@ pipeline {
        }
 
         parameters{
-          string(name: 'COMPONENT',defaultValue: '' , description: 'Which Component')
+          string(name: 'COMPONENT',defaultValue: '', description: 'Which Component')
           string(name: 'ENV',defaultValue: '', description: 'which Env')
-          string(name: 'APP_VERSION' , defaultValue: '' , description: 'which Version')
+          string(name: 'APP_VERSION', defaultValue: '', description: 'which Version')
 
        }
    stages{
-           stage ('get servers'){
+           stage ('Get Servers'){
               steps {
                 sh 'aws ec2 describe-instances --filters "Name=tag:Name,Values=${component}-${env}" --query "Rservations[*].Instances[*].PrivateIpaddress" --output text >inv
 
@@ -29,3 +29,4 @@ pipeline {
              }
        }
     }
+ }
