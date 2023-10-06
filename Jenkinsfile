@@ -18,14 +18,14 @@ pipeline {
    stages{
            stage ('Get Servers'){
               steps {
-                sh 'aws ec2 describe-instances --filters "Name=tag:Name,Values=${component}-${env}" --query "Rservations[*].Instances[*].PrivateIpaddress" --output text >inv
+                sh 'aws ec2 describe-instances --filters "Name=tag:Name,Values=${component}-${env}" --query "Rservations[*].Instances[*].PrivateIpaddress" --output text >inv'
 
                }
            }
 
        stage('Deploy Application') {
              steps{
-                sh 'ansible-playbook -i inv main.yml -e role_name=${COMPONENT} -e env=${ENV} -e app_version=${APP_VERSION} -e ansible_user=centos -e ansible_password=DevOps321
+                sh 'ansible-playbook -i inv main.yml -e role_name=${COMPONENT} -e env=${ENV} -e app_version=${APP_VERSION} -e ansible_user=centos -e ansible_password=DevOps321'
              }
        }
     }
