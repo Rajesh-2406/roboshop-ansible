@@ -5,7 +5,7 @@ pipeline{
      }
   }
   options {
-     ansiColor('xterm')
+          ansiColor('xterm')
       }
   parameters {
         string(name: 'COMPONENT', defaultValue: '', description: 'Which Component')
