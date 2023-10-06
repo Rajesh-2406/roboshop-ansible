@@ -6,13 +6,12 @@ pipeline {
          }
     }
        options {
-          ansiColor('xterm')
-       }
+               ansiColor('xterm')
 
-        parameters{
-          string(name: 'COMPONENT',defaultValue: '', description: 'Which Component')
-          string(name: 'ENV',defaultValue: '', description: 'which Env')
-          string(name: 'APP_VERSION', defaultValue: '', description: 'which Version')
+       parameters {
+                string(name: 'COMPONENT', defaultValue: '', description: 'Which Component')
+                string(name: 'ENV', defaultValue: '', description: 'Which Env')
+                string(name: 'APP_VERSION', defaultValue: '', description: 'Which Version')
 
        }
    stages{
